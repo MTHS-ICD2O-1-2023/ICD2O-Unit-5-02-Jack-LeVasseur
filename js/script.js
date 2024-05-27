@@ -6,23 +6,15 @@
 
 "Use strict"
 
-/**
- * This function displays the slider value.
- */
 function myButtonClicked() {
-  alwaysOnButtonChecked = document.getElementById('on-check').checked
+  positiveChecked = document.getElementById('positive-number').checked
+  negativeChecked = document.getElementById('negative-number').checked
 
-  if (alwaysOnButtonChecked == true) {
-    let min = 1;
-    let max = 10;
-    let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-    document.getElementById("radio-button-value").innerHTML =
-      "<p>The random number is:" + randomNum + "</p>"
+  const randomNumber = Math.floor(Math.random() * 10) + 1
+
+  if (positiveChecked == true) {
+    document.getElementById("number-answer").innerHTML = randomNumber
   } else {
-    let min = -10;
-    let max = -1;
-    let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-    document.getElementById("radio-button-value").innerHTML =
-      "<p>The random number is:" + randomNum + "</p>"
+    document.getElementById("number-answer").innerHTML = (randomNumber * -1)
   }
 }
